@@ -119,6 +119,9 @@ class Exercise < ActiveRecord::Base
     end
   end
 
+  def self.question_types
+    return TYPE_NAMES
+  end
 
   # -------------------------------------------------------------
   # return the extension of a given language
