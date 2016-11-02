@@ -1,15 +1,14 @@
 .nested-fields
   = f.inputs do
     .row.darker-bkg
-      .row             
-        .col-md-3
-          = f.input :version, as: :number,
-            input_html: {value: 1}    
-        .col-md-3
-          = f.input :creator,  as: :email,
-            input_html: {value: current_user.email}
+      .form-group
+        = f.label :version, 'Version', class: 'control-label col-md-2 col-xs-1'
+        .col-lg-1.col-md-1.col-xs-1
+          = f.text_field :version, type: 'number', class: 'form-control', placeholder: 'Enter a placeholder', min: 1, value: 1
+        = f.label :creator, 'Creator Email', class: 'control-label col-md-2 col-xs-1'
+        .col-xs-2
+          = f.text_field :creator, type: 'email', class: 'form-control', placeholder: 'Enter your email address',
+            value: "#{current_user.email}"
 
-    
-  = f.semantic_fields_for :prompt do |ev|         
-    = render 'prompt_fields', f: ev, qtype: qtype
-
+  -# = f.semantic_fields_for :prompt do |ev|
+  -#   = render 'prompt_fields', f: ev, qtype: qtype

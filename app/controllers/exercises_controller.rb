@@ -75,6 +75,15 @@ class ExercisesController < ApplicationController
     # @areas = Tag.where(tagtype: Tag.area).pluck(:tag_name)
   end
 
+  # -------------------------------------------------------------
+  # GET /exercises/show_prompt_form
+  def show_prompt_form
+    @qtype = params[:qtype]
+
+    respond_to do |format|
+      format.js
+    end
+  end
 
   # -------------------------------------------------------------
   # GET /exercises/1/edit

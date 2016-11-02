@@ -1,0 +1,1 @@
+$('#question-type-form').html("#{escape_javascript(semantic_fields_for :exercise_version do |ev| render 'exercise_version_fields' f: ev, qtype: @qtype end )}");

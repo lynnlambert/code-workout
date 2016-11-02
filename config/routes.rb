@@ -54,6 +54,7 @@ CodeWorkout::Application.routes.draw do
     post  'exercises_yaml_create' => 'exercises#yaml_create'
     get  'exercises/upload' => 'exercises#upload', as: :exercises_upload
     get  'exercises/download' => 'exercises#download', as: :exercises_download
+    get 'exercises/show_prompt_form' => 'exercises#show_prompt_form'
     post 'exercises/upload_create' => 'exercises#upload_create'
     get  'exercises/upload_mcqs' => 'exercises#upload_mcqs',
       as: :exercises_upload_mcqs

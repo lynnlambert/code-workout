@@ -13,6 +13,7 @@
 
 %h1 New Exercise
 
+= javascript_include_tag('exercise_form')
 = semantic_form_for @exercise, html: { class: 'form-horizontal' } do |f|
   = f.semantic_errors
 
@@ -45,3 +46,9 @@
     .col-xs-2
       = f.select :question_type, Exercise.question_types.collect { |k, v| [ v, k ] }, { include_blank: true },
         { class: 'form-control', minwidth: 25 }
+    .col-xs-offset-2
+      %small.text.text-warning.question-type-msg Please select a question type to continue.
+
+  #question-type-form
+    = semantic_fields_for :exercise_version do |ev|
+      = render 'exercise_version_fields', f: ev
